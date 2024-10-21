@@ -2,36 +2,38 @@ group 'org.leanflutter.plugins.flutter_svprogresshud'
 version '1.0'
 
 buildscript {
-    repositories {
-        google()
-        jcenter()
-    }
+  repositories {
+    google()
+    mavenCentral()
+  }
 
-    dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.0'
-    }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:7.3.1'
+  }
 }
 
 rootProject.allprojects {
-    repositories {
-        google()
-        jcenter()
-    }
+  repositories {
+    google()
+    mavenCentral()
+  }
 }
 
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 28
+  namespace 'org.leanflutter.plugins.flutter_svprogresshud'
+  compileSdkVersion 34
 
-    defaultConfig {
-        minSdkVersion 16
-    }
-    lintOptions {
-        disable 'InvalidPackage'
-    }
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
+  defaultConfig {
+    minSdkVersion 19
+    testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+  }
+  lintOptions {
+    disable 'InvalidPackage'
+  }
+  compileOptions {
+    sourceCompatibility JavaVersion.VERSION_1_8
+    targetCompatibility JavaVersion.VERSION_1_8
+  }
 }
